@@ -1,3 +1,4 @@
+//;..xd();//elimina esto
 const MAX_ATTEMPTS = 10;
 let answer = $('#answer').val(),
     attempt = $('#attempt').val();
@@ -71,7 +72,7 @@ function guess() {
     showAnswers(correct);
     showReplay();
   }
-  console.log(`${input} ${"0" * 4} ${answer} ${attempt}`);
+  console.log(`${input} ${answer} ${attempt}`);
 }
 
 let codeAgrupation = {
@@ -81,4 +82,10 @@ let codeAgrupation = {
 }
 $(document).ready(function(){
   codeAgrupation.reactions();
+  //let prueba = function(){
+  //  window.location.reload()
+  //  guess();
+  //  console.log(answer);
+  //}
+  //setInterval(prueba, 5000);
 })
