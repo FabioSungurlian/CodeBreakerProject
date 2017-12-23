@@ -16,9 +16,7 @@ function setMessage(input){
 
 function validateInput(input){
   let valid = input.length === ANSWER_LEN;
-  if (!valid) {
-    message.innerHTML = `Guesses must be exactly ${ANSWER_LEN} characters long.`;
-  }
+  if (!valid) { message.innerHTML = `Guesses must be exactly ${ANSWER_LEN} characters long.`; }
   return valid;
 }
 
