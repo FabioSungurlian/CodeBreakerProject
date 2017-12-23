@@ -46,7 +46,7 @@ function validateInput(i){
   return valid;
 }
 
-function showAnswers(i){
+function showAnswer(i){
   let code = $("#code");
   code.text(answer);
   code.addClass(i === true ? "success" : "failure");
@@ -69,7 +69,7 @@ function guess() {
   let correct = getResults(input);
   setMessage( correct? "You Win! :)" : attempt < MAX_ATTEMPTS? "Incorrect, try again." : "You Lose! :(" );
   if(correct || attempt >= MAX_ATTEMPTS){
-    showAnswers(correct);
+    showAnswer(correct);
     showReplay();
   }
   console.log(`${input} ${answer} ${attempt}`);
