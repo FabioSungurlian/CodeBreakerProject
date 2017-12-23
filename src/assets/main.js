@@ -24,10 +24,13 @@ function getResults(input){
 
 //pre-game necessary values
 function setHiddenFields(){
-  let randomAnswer = Math.floor(Math.random() * 1000).toString();
-  randomAnswer = "0" * (4 - randomAnswer.length) + randomAnswer;
+  let random = Math.floor(Math.random() * 1000).toString();
+  let ranLen = random.length;
+  if(ranLen < 4){
+    random = "0".repeat(4 - ranLen) + random;
+  }
   attempt = 0;
-  answer = randomAnswer;
+  answer = random;
 }
 
 function setMessage(message){
@@ -45,12 +48,12 @@ function validateInput(i){
 function showAnswers(i){
   let code = $("#code");
   code.text(answer);
-  code.addClass(i? "success" : "failure");
+  code.addClass(i === true ? "success" : "failure");
 }
 
 function showReplay(){
   $("#guessing-div").hide();
-  $("#guessing-div").show();
+  $("#replay-div").show();
 }
 
 function guess() {
@@ -68,7 +71,7 @@ function guess() {
     showAnswers(correct);
     showReplay();
   }
-  console.log(`${input} ${answer} ${attempt}`);
+  console.log(`${input} ${"0" * 4} ${answer} ${attempt}`);
 }
 
 let codeAgrupation = {
